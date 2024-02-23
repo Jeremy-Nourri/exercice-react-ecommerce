@@ -1,12 +1,17 @@
 import { CartContext } from "./context/CartContext";
 import { useState } from "react";
+/// DATA
 import { produits } from "./data/produits";
 import { panier } from "./data/panier";
+/// COMPONENTS
 import ProductCard from "./components/ProductCard";
+import Modal from "./components/Modal/Modal";
+/// CSS
 import "./App.css";
 
 function App() {
   const [cart, setCart] = useState(panier);
+  const [showModal, setShowModal] = useState(false);
 
   return (
     <>
@@ -14,10 +19,12 @@ function App() {
 
         <header className="App-header">
           <p>Ecommerce</p>
-          <button>Panier</button>
+          <button onClick={() => setShowModal(true)}>Panier</button>
         </header>
         
         <main className="App-main">
+
+          {showModal && <Modal setShowModal={setShowModal} />}
         
           <h1>Produits</h1>
         

@@ -1,5 +1,4 @@
 export const panier = {
-    produits: [
-    ],
+    produits: [],
     total: 0
 }
