@@ -1,4 +1,4 @@
-import { CartContext } from "./context/cartContact";
+import { CartContext } from "./context/CartContext";
 import { useState } from "react";
 import { produits } from "./data/produits";
 import { panier } from "./data/panier";
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <>
-      <CartContext.Provider value={[cart, setCart]}>
+      <CartContext.Provider value={{cart, setCart}}>
 
         <header className="App-header">
           <p>Ecommerce</p>
@@ -33,7 +33,7 @@ function App() {
 
       </CartContext.Provider>
     </>
-    
+
   );
 }
 

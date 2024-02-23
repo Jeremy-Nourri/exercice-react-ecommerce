@@ -1,12 +1,27 @@
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import { CartContext } from '../context/CartContext';
 
 export default function ProductCard ({ product }) {
+
+    const value = useContext(CartContext);
+
+    const { cart, setCart } = value;
+
+    const addProductinCart = () => {
+        setCart({
+            produits: [...cart.produits, product],
+            total: cart.total + product.prix
+        })
+        console.log(cart);
+    }
+
   return (
     <article className="product">
       <h2>{product.nom}</h2>
       <p>{product.description}</p>
       <p>{product.prix} €</p>
-      <button>Ajouter au panier</button>
+      <button onClick={addProductinCart}>Ajouter au panier</button>
     </article>
   )
 }
