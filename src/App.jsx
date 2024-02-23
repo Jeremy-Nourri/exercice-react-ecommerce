@@ -15,32 +15,28 @@ function App() {
 
   return (
     <>
-      <CartContext.Provider value={{cart, setCart}}>
-
+      <CartContext.Provider value={{ cart, setCart }}>
         <header className="App-header">
           <p>Ecommerce</p>
           <button onClick={() => setShowModal(true)}>Panier</button>
         </header>
-        
-        <main className="App-main">
 
-          {showModal && <Modal setShowModal={setShowModal} />}
-        
+        <main>
           <h1>Produits</h1>
-        
-          {produits.map((product) => (
-            <ProductCard key={product.id} product={product} />
-          ))}
-        
+          <div className="flex flex-wrap">
+            {showModal && <Modal setShowModal={setShowModal} />}
+
+            {produits.map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </div>
         </main>
-        
+
         <footer className="App-footer">
           <p>Ecommerce - 2024</p>
         </footer>
-
       </CartContext.Provider>
     </>
-
   );
 }
 

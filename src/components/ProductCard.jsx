@@ -10,7 +10,6 @@ export default function ProductCard({ product }) {
   const { id, item } = product;
 
   const addProductInCart = () => {
-
     const newProducts = cart.produits.map((element) => {
       if (element.id === id) {
         return {
@@ -43,14 +42,24 @@ export default function ProductCard({ product }) {
   };
 
   return (
-    <article className="product">
-      <img src={item.image} alt={item.nom} />
-      <h2>{item.nom}</h2>
-      <p>{item.categorie}</p>
-      <p>{item.description}</p>
-      <p>{item.prix} €</p>
+    <article className="card card-compact w-80 bg-base-100 shadow-xl m-2">
 
-      <button onClick={addProductInCart}>Ajouter au panier</button>
+        <figure className="h-[430px]">
+          <img
+            src={item.image}
+            alt={item.nom}
+            className="w-full h-full object-cover object-center"
+          />
+        </figure>
+        <div className="card-body">
+          <h2 className="card-title">
+            {item.nom}
+          </h2>
+          <div className="badge badge-secondary">{item.categorie}</div>
+          <p>{item.description}</p>
+          <p className="">Prix: {item.prix} €</p>
+          <button className="btn btn-outline" onClick={addProductInCart}>Ajouter au panier</button>
+        </div>
     </article>
   );
 }
