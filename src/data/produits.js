@@ -6,6 +6,7 @@ export const produits = [
             nom: "Casque SoundX",
             description: "Casque audio sans fil Bluetooth avec son haute qualité et isolation du bruit.",
             prix: 89.99,
+            image: "src/assets/img/casque.jpg",
             categorie: "Son"
         }
     },
@@ -16,6 +17,7 @@ export const produits = [
             nom: "Enceinte SoundX",
             description: "Enceinte Bluetooth portable avec son haute qualité et autonomie de 10h.",
             prix: 49.99,
+            image: "src/assets/img/enceinte.jpg",
             categorie: "Son"
         }
     },
@@ -26,6 +28,7 @@ export const produits = [
             nom: "Smartphone Y",
             description: "Smartphone 5G avec écran 6.5 pouces, 128Go de stockage et 4 capteurs photos.",
             prix: 399.99,
+            image: "src/assets/img/smartphone-y.jpg",
             categorie: "Téléphonie"
         }
     },
@@ -36,6 +39,7 @@ export const produits = [
             nom: "Smartphone X",
             description: "Smartphone 5G avec écran 6.5 pouces, 128Go de stockage et 4 capteurs photos.",
             prix: 499.99,
+            image: "src/assets/img/smartphone-x.jpg",
             categorie: "Téléphonie"
         }
     },
@@ -46,6 +50,7 @@ export const produits = [
             nom: "Smartphone Z",
             description: "Smartphone 5G avec écran 6.5 pouces, 128Go de stockage et 4 capteurs photos.",
             prix: 599.99,
+            image: "src/assets/img/smartphone-z.jpg",
             categorie: "Téléphonie"
         }
     },
@@ -56,6 +61,7 @@ export const produits = [
             nom: "Ordinateur portable",
             description: "Ordinateur portable 15 pouces avec processeur Intel Core i5, 8Go de RAM et 512Go de stockage.",
             prix: 899.99,
+            image: "src/assets/img/ordinateur-portable.jpg",
             categorie: "Informatique"
         }
     },
@@ -66,6 +72,7 @@ export const produits = [
             nom: "Souris gaming",
             description: "Souris gaming sans fil avec 6 boutons et capteur optique haute précision.",
             prix: 49.99,
+            image: "src/assets/img/souris.jpg",
             categorie: "Informatique"
         }
     },
@@ -76,6 +83,7 @@ export const produits = [
             nom: "Clavier gaming",
             description: "Clavier gaming mécanique rétro-éclairé avec touches programmables.",
             prix: 99.99,
+            image: "src/assets/img/clavier.jpg",
             categorie: "Informatique"
         }
     }

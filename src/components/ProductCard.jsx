@@ -44,6 +44,7 @@ export default function ProductCard({ product }) {
 
   return (
     <article className="product">
+      <img src={item.image} alt={item.nom} />
       <h2>{item.nom}</h2>
       <p>{item.categorie}</p>
       <p>{item.description}</p>
