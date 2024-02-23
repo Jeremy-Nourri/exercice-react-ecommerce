@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 export default function ProductCard ({ product }) {
   return (
     <article className="product">
