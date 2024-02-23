@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 export default function Modal({ setShowModal }) {
 
-
   const { cart, setCart } = useContext(CartContext);
 
     const closeModal = () => {
@@ -55,11 +54,13 @@ export default function Modal({ setShowModal }) {
         })
     }
 
-
     return createPortal(
         <div className="modal">
+
             <button onClick={closeModal}>Fermer</button>
+            
             <h1>Panier</h1>
+
             <ul>
                 {cart.produits.map((product) => (
                     <li key={product.id}>
@@ -78,8 +79,10 @@ export default function Modal({ setShowModal }) {
                     </li>
                 ))}
             </ul>
+
             <p>Total : {cart.total} €</p>
             <button onClick={clearCart}>Vider le panier</button>
+
         </div>,
         document.body
     )

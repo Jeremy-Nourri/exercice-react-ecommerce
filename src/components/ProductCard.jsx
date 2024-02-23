@@ -11,33 +11,34 @@ export default function ProductCard({ product }) {
 
   const addProductInCart = () => {
 
-    const newProduits = cart.produits.map((element) => {
+    const newProducts = cart.produits.map((element) => {
       if (element.id === id) {
         return {
           id: id,
           item: item,
           quantite: element.quantite + 1,
         };
+      } else {
+        return element;
       }
-      return element;
     });
 
-    const isProductInCart = newProduits.find((element) => element.id === id);
-    
+    const isProductInCart = cart.produits.find((element) => element.id === id);
     if (!isProductInCart) {
-      newProduits.push({
+      newProducts.push({
         id: id,
         item: item,
         quantite: 1,
       });
     }
-    
-    const total = (parseFloat(cart.total) + parseFloat(item.prix)).toFixed(2);
+
+    const newTotal = (cart.total + item.prix).toFixed(2);
 
     setCart({
-      produits: newProduits,
-      total: total,
+      produits: newProducts,
+      total: Number(newTotal),
     });
+
     console.log(cart);
   };
 
