@@ -42,7 +42,7 @@ export default function ProductCard({ product }) {
   };
 
   return (
-    <article className="card card-compact w-80 bg-base-100 shadow-xl m-2">
+    <article className="card card-compact w-64 bg-base-100 shadow-xl m-2">
 
         <figure className="h-[430px]">
           <img
@@ -57,7 +57,9 @@ export default function ProductCard({ product }) {
           </h2>
           <div className="badge badge-secondary">{item.categorie}</div>
           <p>{item.description}</p>
-          <p className="">Prix: {item.prix} €</p>
+          <div className="card-actions justify-end font-semibold">
+            Prix: {item.prix} €
+          </div>
           <button className="btn btn-outline" onClick={addProductInCart}>Ajouter au panier</button>
         </div>
     </article>

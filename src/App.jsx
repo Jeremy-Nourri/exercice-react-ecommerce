@@ -4,27 +4,29 @@ import { useState } from "react";
 import { produits } from "./data/produits";
 import { panier } from "./data/panier";
 /// COMPONENTS
+import Header from "./components/Header";
 import ProductCard from "./components/ProductCard";
 import Modal from "./components/Modal/Modal";
 /// CSS
 import "./App.css";
 
+
 function App() {
+
   const [cart, setCart] = useState(panier);
   const [showModal, setShowModal] = useState(false);
 
   return (
     <>
       <CartContext.Provider value={{ cart, setCart }}>
-        <header className="App-header">
-          <p>Ecommerce</p>
-          <button onClick={() => setShowModal(true)}>Panier</button>
-        </header>
+        <Header setShowModal={setShowModal} cart={cart} />
 
-        <main>
-          <h1>Produits</h1>
-          <div className="flex flex-wrap">
-            {showModal && <Modal setShowModal={setShowModal} />}
+        <main className="px-2">
+          
+          <h1 className="text-center my-3 font-bold text-xl">Nos produits</h1>
+
+          <div className="flex flex-wrap justify-center">
+            {showModal && (<Modal setShowModal={setShowModal} />)}
 
             {produits.map((product) => (
               <ProductCard key={product.id} product={product} />
